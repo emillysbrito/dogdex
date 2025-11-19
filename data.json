@@ -1,0 +1,57 @@
+[
+    {
+        "nome": "Beagle",
+        "imagem": "assets/images/beagle.jpeg",
+        "descricao": "O Beagle é um cão farejador compacto e amigável, conhecido por sua personalidade alegre e curiosa. Originalmente criado para caçar lebres, ele tem um instinto forte para seguir rastros.",
+        "porte": "Pequeno a Médio",
+        "nivel_energia": "Alto",
+        "expectativa_vida": "12-15 anos",
+        "origem": "Inglaterra",
+        "grupo": "6 - Sabujos farejadores e raças assemelhadas",
+        "fun_fact": "O Beagle mais famoso do mundo é o Snoopy, o icônico personagem dos quadrinhos Peanuts!"
+    },
+    {
+        "nome": "Dachshund",
+        "imagem": "assets/images/dachshund.jpg",
+        "descricao": "Famoso por seu corpo longo e pernas curtas, o Dachshund é um cão corajoso e teimoso. Foi originalmente desenvolvido para caçar animais de toca, como texugos.",
+        "porte": "Pequeno",
+        "nivel_energia": "Médio",
+        "expectativa_vida": "12-16 anos",
+        "origem": "Alemanha",
+        "grupo": "4 - Dachshunds",
+        "fun_fact": "Seu nome significa 'cão texugo' em alemão. Foi o primeiro mascote oficial dos Jogos Olímpicos (Munique, 1972)."
+    },
+    {
+        "nome": "Flat-Coated Retriever",
+        "imagem": "assets/images/flat-coated.jpg",
+        "descricao": "Conhecido como o 'Peter Pan' canino, o Flat-Coated Retriever é um cão de caça extremamente alegre e otimista, que mantém seu espírito de filhote por toda a vida.",
+        "porte": "Médio a Grande",
+        "nivel_energia": "Alto",
+        "expectativa_vida": "8-12 anos",
+        "origem": "Inglaterra",
+        "grupo": "8 - Retrievers, Levantadores e Cães d'Água",
+        "fun_fact": "Sua cauda está sempre abanando, o que reflete perfeitamente sua personalidade feliz e extrovertida."
+    },
+    {
+        "nome": "Golden Retriever",
+        "imagem": "assets/images/golden.jpg",
+        "descricao": "Uma das raças mais populares do mundo, o Golden Retriever é conhecido por sua natureza dócil, inteligência e lealdade. É um excelente cão de família e um trabalhador versátil.",
+        "porte": "Grande",
+        "nivel_energia": "Alto",
+        "expectativa_vida": "10-12 anos",
+        "origem": "Escócia",
+        "grupo": "8 - Retrievers, Levantadores e Cães d'Água",
+        "fun_fact": "A raça foi desenvolvida por Lord Tweedmouth, que queria um cão de caça capaz de buscar aves tanto na terra quanto na água."
+    },
+    {
+        "nome": "Pastor Alemão",
+        "imagem": "assets/images/pastor-alemao.jpg",
+        "descricao": "Um cão de trabalho nobre e altamente inteligente, o Pastor Alemão é conhecido por sua coragem, lealdade e versatilidade. É frequentemente usado como cão policial, de serviço e de busca e resgate.",
+        "porte": "Grande",
+        "nivel_energia": "Alto",
+        "expectativa_vida": "9-13 anos",
+        "origem": "Alemanha",
+        "grupo": "1 - Cães Pastores e Boiadeiros",
+        "fun_fact": "Rin Tin Tin, um dos primeiros cães estrelas de Hollywood, era um Pastor Alemão resgatado de um campo de batalha da Primeira Guerra Mundial."
+    }
+]

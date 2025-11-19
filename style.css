@@ -107,6 +107,7 @@ main {
 }
 
 article {
+    display: flex;
     background: none;
     border-radius: 0;
     padding: 0;
@@ -121,6 +122,16 @@ article {
 article:hover {
     transform: scale(1.01);
     cursor: pointer;
+}
+
+article img{
+    height: 100%; /* Faz a imagem ocupar a altura do card */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card-content{
+    margin: 15px;
 }
 
 article h2 {
