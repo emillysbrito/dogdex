@@ -1,0 +1,247 @@
+@font-face {
+    font-family: 'RoundsNeueBlack';
+    src: url('assets/fonts/TT\ Rounds\ Neue\ Trial\ Black.ttf');
+}
+
+@font-face {
+    font-family: 'HelveticaRound';
+    src: url('assets/fonts/helveticaRound.otf');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #6E85B7; 
+    --secondary-color: #B2C8DF;
+    --tertiary-color: #C4D7E0;
+    --bg-color: #F8F9D7;
+    --title-font: 'RoundsNeueBlack';
+    --body-font: 'HelveticaRound'
+}
+
+body {
+    margin: 0;
+    background: var(--bg-color);
+    color: var(--secondary-color);
+    font-family: var(--body-font);
+}
+
+header {
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: sticky;
+    top: 0;
+    background: var(--bg-color);
+    z-index: 10;
+    border-bottom: 1px solid var(--bg-color);
+    gap: 1rem;
+}
+
+header h1 {
+    font-family: var(--title-font);
+    font-size: 2rem;
+    margin: 0;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+div input {
+    padding: 0.375rem 0.75rem;
+    border-radius: 1rem;
+    border: 1px solid var(--tertiary-color);
+    background: var(--bg-color);
+    font-family: inherit;
+    font-size: 1.5rem;
+    transition: all 0.2s ease;
+    height: 40px;
+    width: 30rem;
+    color: var(--secondary-color);
+    margin-right: .5rem;
+}
+
+div input::placeholder {
+    font-size: 1.2rem;
+    color: var(--tertiary-color);
+}
+
+div input:focus {
+    outline: none;
+    border-color: var(--bg-color);
+    box-shadow: 0 0 0 0.1rem var(--tertiary-color);
+}
+
+#botao-busca {
+    padding: 0.75rem 2rem;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 1rem;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    background-color: var(--bg-color);
+    color: var(--secondary-color);
+    border: 1px solid var(--bg-color);
+}
+
+#botao-busca:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+}
+
+#botao-busca:active {
+    transform: scale(0.97);
+}
+
+main {
+    overflow-y: scroll;
+    max-width: 80rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+    height: calc(100vh - 10rem - 4rem);
+}
+
+article {
+    background: none;
+    border-radius: 0;
+    padding: 0;
+    padding: 0 1rem;
+    margin-bottom: 1.25rem;
+    box-shadow: none;
+    transition: background-color 0.3s ease, border-bottom-color 0.3s ease;
+    border-bottom: 1px solid var(--bg-color);
+    padding-bottom: 1.5rem;
+}
+
+article:hover {
+    transform: scale(1.01);
+    cursor: pointer;
+}
+
+article h2 {
+    margin-top: 0;
+    font-weight: 600;
+    font-size: 1.6rem;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0.25rem;
+    color: var(--primary-color);
+}
+
+article p {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+article p strong {
+    color: var(--tertiary-color);
+    font-weight: 400;
+    font-style: italic;
+}
+
+
+article a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 200;
+}
+
+article a:hover {
+    text-decoration: underline;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: var(--tertiary-color);
+    background-color: var(--bg-color);
+    padding: 15px 20px;
+    border-top: 1px solid var(--primary-color);
+    font-size: 0.8rem;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.footer-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    header h1 {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    div input {
+        width: 90vw;
+        font-size: 1.2rem;
+    }
+
+    main {
+        padding: 0 1rem;
+    }
+
+    article:hover {
+        transform: none;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1rem;
+        max-width: 70%;
+        word-wrap: break-word;
+    }
+
+    div input,
+    div input::placeholder {
+        font-size: 1rem;
+    }
+
+    article h2 {
+        font-size: 1.3rem;
+    }
+
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .footer {
+        display: none;
+    }
+
+    button {
+        margin-top: 1rem;
+    }
+}
