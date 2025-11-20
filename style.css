@@ -75,6 +75,8 @@ div input:focus {
 }
 
 #botao-busca {
+    display: inline-block;
+    vertical-align: middle;
     padding: 0.75rem 2rem;
     border-radius: 1rem;
     border: none;
@@ -83,7 +85,6 @@ div input:focus {
     font-weight: 500;
     font-size: 1rem;
     white-space: nowrap;
-    transition: background-color 0.2s ease, color 0.2s ease;
     background-color: var(--bg-color);
     color: var(--secondary-color);
     border: 1px solid var(--bg-color);
@@ -94,15 +95,11 @@ div input:focus {
     color: var(--bg-color);
 }
 
-#botao-busca:active {
-    transform: scale(0.97);
-}
-
 main {
-    overflow-y: scroll;
+    overflow-x: hidden;
     max-width: 80rem;
     margin: 0 auto;
-    margin-top: 2rem;
+    margin-top: 0.5rem;
     height: calc(100vh - 10rem - 4rem);
 }
 
@@ -125,7 +122,7 @@ article:hover {
 }
 
 article img{
-    height: 100%; /* Faz a imagem ocupar a altura do card */
+    height: 100%;
     object-fit: cover;
     border-radius: 8px;
 }
@@ -135,6 +132,7 @@ article img{
 }
 
 article h2 {
+    font-family: var(--title-font);
     margin-top: 0;
     font-weight: 600;
     font-size: 1.6rem;
@@ -153,11 +151,41 @@ article p {
 }
 
 article p strong {
-    color: var(--tertiary-color);
-    font-weight: 400;
-    font-style: italic;
+    color: var(--primary-color);
+    font-weight: bold;
 }
 
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.pagination-button, .pagination-arrow {
+    margin: 0 5px;
+    padding: 8px 16px;
+    border: 1px solid var(--tertiary-color);
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    cursor: pointer;
+    border-radius: 1rem;
+    font-family: var(--body-font);
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination-button:hover, .pagination-button.active {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    border-color: var(--primary-color);
+}
+
+.pagination-arrow {
+    border: none;
+}
 
 article a {
     color: var(--primary-color);
@@ -255,4 +283,20 @@ article a:hover {
     button {
         margin-top: 1rem;
     }
+}
+
+.hvr-shrink {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+.hvr-shrink:active {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
 }

@@ -1,5 +1,49 @@
 [
     {
+        "nome": "Akita Inu",
+        "imagem": "assets/images/akita-inu.jpg",
+        "descricao": "O Akita Inu é um cão de origem japonesa, conhecido por sua nobreza, coragem e lealdade. É uma raça grande e poderosa, originalmente utilizada para caça de grande porte, como ursos.",
+        "porte": "Grande",
+        "nivel_energia": "Médio",
+        "expectativa_vida": "10-13 anos",
+        "origem": "Japão",
+        "grupo": "5 - Spitz e cães de tipo primitivo",
+        "fun_fact": "A história de Hachiko, um Akita que esperou por seu dono falecido por anos em uma estação de trem, tornou a raça um símbolo mundial de lealdade."
+    },
+    {
+        "nome": "American Bully",
+        "imagem": "assets/images/american-bully.jpg",
+        "descricao": "O American Bully é uma raça recente, desenvolvida como um cão de companhia. Apesar da aparência robusta, são conhecidos por sua natureza gentil, afetuosa e tolerante, sendo ótimos com crianças.",
+        "porte": "Médio a Grande",
+        "nivel_energia": "Médio",
+        "expectativa_vida": "10-13 anos",
+        "origem": "Estados Unidos",
+        "grupo": "Não reconhecido pela FCI",
+        "fun_fact": "A raça foi criada para ser o 'cão de família definitivo', combinando a lealdade do Pit Bull com a sociabilidade de outras raças de bulldog."
+    },
+    {
+        "nome": "American PitBull Terrier",
+        "imagem": "assets/images/american-pitbull-terrier.jpg",
+        "descricao": "Conhecido por sua força, confiança e entusiasmo pela vida, o American Pit Bull Terrier é um cão de companhia leal e afetuoso. Quando bem socializados, são amigáveis com pessoas e outros animais.",
+        "porte": "Médio",
+        "nivel_energia": "Alto",
+        "expectativa_vida": "12-16 anos",
+        "origem": "Estados Unidos",
+        "grupo": "Não reconhecido pela FCI",
+        "fun_fact": "Durante a Primeira e Segunda Guerra Mundial, o Pit Bull foi usado como mascote nacional nos EUA, simbolizando coragem e bravura."
+    },
+        {
+        "nome": "Basset Hound",
+        "imagem": "assets/images/basset-hound.jpg",
+        "descricao": "Com suas orelhas longas e caídas e olhar melancólico, o Basset Hound é um cão farejador de temperamento calmo e amigável. Foi criado para caçar lebres e coelhos, usando seu olfato apurado.",
+        "porte": "Médio",
+        "nivel_energia": "Baixo",
+        "expectativa_vida": "12-13 anos",
+        "origem": "França / Grã-Bretanha",
+        "grupo": "6 - Sabujos farejadores e raças assemelhadas",
+        "fun_fact": "Suas longas orelhas ajudam a 'varrer' os cheiros do chão em direção ao seu nariz, aprimorando sua incrível capacidade de rastreamento."
+    },
+    {
         "nome": "Beagle",
         "imagem": "assets/images/beagle.jpeg",
         "descricao": "O Beagle é um cão farejador compacto e amigável, conhecido por sua personalidade alegre e curiosa. Originalmente criado para caçar lebres, ele tem um instinto forte para seguir rastros.",
@@ -9,6 +53,116 @@
         "origem": "Inglaterra",
         "grupo": "6 - Sabujos farejadores e raças assemelhadas",
         "fun_fact": "O Beagle mais famoso do mundo é o Snoopy, o icônico personagem dos quadrinhos Peanuts!"
+    },
+        {
+        "nome": "Boiadeiro Australiano (Blue Heeler)",
+        "imagem": "assets/images/boiadeiro-australiano.jpg",
+        "descricao": "Um cão de pastoreio extremamente inteligente, alerta e resistente. O Blue Heeler é leal à sua família, mas pode ser desconfiado com estranhos. Precisa de muito exercício físico e mental.",
+        "porte": "Médio",
+        "nivel_energia": "Muito Alto",
+        "expectativa_vida": "12-16 anos",
+        "origem": "Austrália",
+        "grupo": "1 - Cães Pastores e Boiadeiros",
+        "fun_fact": "A raça foi desenvolvida cruzando Dingos (cães selvagens australianos) com Collies, para criar um cão de trabalho que suportasse o clima árido da Austrália."
+    },
+    {
+        "nome": "Boiadeiro de Berna (Bernese)",
+        "imagem": "assets/images/bernese.jpg",        
+        "descricao": "O Boiadeiro de Berna é um cão grande e robusto, conhecido por sua pelagem tricolor e temperamento gentil. Originalmente usado como cão de fazenda na Suíça, é leal, afetuoso e bom com crianças.",
+        "porte": "Grande",
+        "nivel_energia": "Médio",
+        "expectativa_vida": "7-10 anos",
+        "origem": "Suíça",
+        "grupo": "2 - Pinscher e Schnauzer, Molossos e Cães Boiadeiros Suíços",
+        "fun_fact": "Essa raça é conhecida por muitos nomes diferentes, como Bernese Mountain, Boiadeiro de Berna, Boiadeiro Bernês e Berner Sennenhund."
+    },
+    {
+        "nome": "Border-Collie",
+        "imagem": "assets/images/border-collie.jpg",
+        "descricao": "Considerado por muitos a raça de cão mais inteligente do mundo, o Border Collie é um pastor incansável e atlético. Eles se destacam em esportes caninos e precisam de um trabalho para se sentirem felizes.",
+        "porte": "Médio",
+        "nivel_energia": "Muito Alto",
+        "expectativa_vida": "12-15 anos",
+        "origem": "Grã-Bretanha (fronteira Escócia/Inglaterra)",
+        "grupo": "1 - Cães Pastores e Boiadeiros",
+        "fun_fact": "Seu famoso 'olhar hipnótico' é uma técnica que usam para controlar o rebanho, intimidando as ovelhas apenas com a intensidade do olhar."
+    },
+    {
+        "nome": "Boxer",
+        "imagem": "assets/images/boxer.png",
+        "descricao": "O Boxer é um cão enérgico, brincalhão e leal, conhecido por seu jeito 'palhaço'. Apesar da aparência forte, é um cão de família paciente e protetor, especialmente com crianças.",
+        "porte": "Médio a Grande",
+        "nivel_energia": "Alto",
+        "expectativa_vida": "10-12 anos",
+        "origem": "Alemanha",
+        "grupo": "2 - Pinscher e Schnauzer, Molossos e Cães Boiadeiros Suíços",
+        "fun_fact": "O nome 'Boxer' supostamente vem da tendência da raça de se levantar nas patas traseiras e 'boxear' com as patas dianteiras durante as brincadeiras."
+    },
+    {
+        "nome": "Buldogue Francês",
+        "imagem": "assets/images/buldogue-frances.jpeg",
+        "descricao": "Um cão de companhia charmoso e adaptável, o Buldogue Francês é famoso por suas orelhas de 'morcego' e personalidade afetuosa. É uma das raças de pequeno porte mais populares do mundo.",
+        "porte": "Pequeno",
+        "nivel_energia": "Baixo",
+        "expectativa_vida": "10-12 anos",
+        "origem": "França",
+        "grupo": "9 - Cães de Companhia e Toys",
+        "fun_fact": "Apesar do nome, a raça foi desenvolvida na Inglaterra e se tornou popular na França, onde ganhou seu nome e status de cão da moda."
+    },
+    {
+        "nome": "Bull Terrier",
+        "imagem": "assets/images/bull-terrier.jpg",
+        "descricao": "Reconhecível por sua cabeça em formato de 'ovo' e olhos triangulares, o Bull Terrier é um cão brincalhão, charmoso e um pouco teimoso. São muito apegados aos seus donos.",
+        "porte": "Médio",
+        "nivel_energia": "Alto",
+        "expectativa_vida": "12-13 anos",
+        "origem": "Inglaterra",
+        "grupo": "3 - Terriers",
+        "fun_fact": "Nos anos 80, um Bull Terrier chamado Spuds MacKenzie se tornou um ícone da cultura pop como o mascote 'festeiro' da cerveja Bud Light."
+    },
+    {
+        "nome": "Cane Corso",
+        "imagem": "assets/images/cane-corso.jpg",
+        "descricao": "O Cane Corso é um cão de guarda italiano, imponente e inteligente. É um protetor leal e confiante de sua família. Exige um dono experiente que possa lhe dar treinamento e socialização adequados.",
+        "porte": "Grande",
+        "nivel_energia": "Alto",
+        "expectativa_vida": "9-12 anos",
+        "origem": "Itália",
+        "grupo": "2 - Pinscher e Schnauzer, Molossos e Cães Boiadeiros Suíços",
+        "fun_fact": "Descendente dos cães de guerra romanos, seu nome em latim significa 'cão de guarda de pátio' ou 'cão protetor'."
+    },
+    {
+        "nome": "Chihuahua",
+        "imagem": "assets/images/chihuahua.jpg",
+        "descricao": "Conhecido como uma das menores raças de cães do mundo, o Chihuahua tem uma personalidade gigante. São cães alertas, vivazes e charmosos, com uma grande lealdade aos seus donos.",
+        "porte": "Toy/Anão",
+        "nivel_energia": "Médio",
+        "expectativa_vida": "14-16 anos",
+        "origem": "México",
+        "grupo": "9 - Cães de Companhia e Toys",
+        "fun_fact": "A raça leva o nome do estado mexicano de Chihuahua, onde os primeiros exemplares foram descobertos em meados do século XIX."
+    },
+    {
+        "nome": "Chow-chow",
+        "imagem": "assets/images/chow-chow.jpg",
+        "descricao": "Uma raça antiga da China, o Chow Chow é conhecido por sua aparência de 'leão', pelagem densa e, mais notavelmente, sua língua azul-preta. São cães independentes, reservados e leais.",
+        "porte": "Médio",
+        "nivel_energia": "Baixo",
+        "expectativa_vida": "8-12 anos",
+        "origem": "China",
+        "grupo": "5 - Spitz e cães de tipo primitivo",
+        "fun_fact": "A língua azul-preta é uma característica única da raça (e do Shar-Pei). A razão exata para essa coloração ainda é um mistério genético."
+    },
+    {
+        "nome": "Cocker Spaniel",
+        "imagem": "assets/images/cocker-spaniel.jpg",
+        "descricao": "O Cocker Spaniel é famoso por seus olhos grandes e expressivos e orelhas longas. É um cão alegre, gentil e afetuoso, que se adapta bem à vida em família, seja no campo ou na cidade.",
+        "porte": "Médio",
+        "nivel_energia": "Médio",
+        "expectativa_vida": "12-15 anos",
+        "origem": "Inglaterra",
+        "grupo": "8 - Retrievers, Levantadores e Cães d'Água",
+        "fun_fact": "A personagem 'Dama' do clássico da Disney 'A Dama e o Vagabundo' é uma Cocker Spaniel Americano, o que popularizou a raça no mundo todo."
     },
     {
         "nome": "Dachshund",
@@ -20,6 +174,39 @@
         "origem": "Alemanha",
         "grupo": "4 - Dachshunds",
         "fun_fact": "Seu nome significa 'cão texugo' em alemão. Foi o primeiro mascote oficial dos Jogos Olímpicos (Munique, 1972)."
+    },
+    {
+        "nome": "Doberman",
+        "imagem": "assets/images/doberman.jpg",
+        "descricao": "O Doberman é um cão elegante, poderoso e inteligente, conhecido por sua lealdade e instinto de proteção. É uma das raças de guarda mais reconhecidas do mundo, mas também um companheiro familiar dedicado.",
+        "porte": "Grande",
+        "nivel_energia": "Alto",
+        "expectativa_vida": "10-13 anos",
+        "origem": "Alemanha",
+        "grupo": "2 - Pinscher e Schnauzer, Molossos e Cães Boiadeiros Suíços",
+        "fun_fact": "A raça foi desenvolvida por um cobrador de impostos alemão, Louis Dobermann, que precisava de um cão de proteção para acompanhá-lo em suas rondas."
+    },
+    {
+        "nome": "Dogue Alemão",
+        "imagem": "assets/images/dogue-alemao.jpg",
+        "descricao": "Conhecido como o 'Apolo dos Cães', o Dogue Alemão é uma das raças mais altas do mundo. Apesar de seu tamanho gigante, são conhecidos como 'gigantes gentis' por sua natureza doce e amigável.",
+        "porte": "Gigante",
+        "nivel_energia": "Médio",
+        "expectativa_vida": "7-10 anos",
+        "origem": "Alemanha",
+        "grupo": "2 - Pinscher e Schnauzer, Molossos e Cães Boiadeiros Suíços",
+        "fun_fact": "O personagem de desenho animado Scooby-Doo foi inspirado em um Dogue Alemão, embora suas características sejam bastante exageradas!"
+    },
+    {
+        "nome": "Fila Brasileiro",
+        "imagem": "assets/images/fila-brasileiro.jpg",
+        "descricao": "Uma raça brasileira de cão de guarda e boiadeiro, o Fila Brasileiro é conhecido por sua coragem, determinação e lealdade extrema à família. É naturalmente desconfiado com estranhos.",
+        "porte": "Grande a Gigante",
+        "nivel_energia": "Médio",
+        "expectativa_vida": "9-11 anos",
+        "origem": "Brasil",
+        "grupo": "2 - Pinscher e Schnauzer, Molossos e Cães Boiadeiros Suíços",
+        "fun_fact": "A expressão 'leal como um Fila' é um provérbio brasileiro que reflete a devoção inabalável da raça por seus donos."
     },
     {
         "nome": "Flat-Coated Retriever",
@@ -44,6 +231,61 @@
         "fun_fact": "A raça foi desenvolvida por Lord Tweedmouth, que queria um cão de caça capaz de buscar aves tanto na terra quanto na água."
     },
     {
+        "nome": "Husky Siberiano",
+        "imagem": "assets/images/husky-siberiano.jpg",
+        "descricao": "Um cão de trabalho gracioso e de porte médio, o Husky Siberiano é famoso por sua pelagem densa, olhos marcantes e natureza amigável e extrovertida. Foram criados para puxar trenós por longas distâncias.",
+        "porte": "Médio",
+        "nivel_energia": "Alto",
+        "expectativa_vida": "12-15 anos",
+        "origem": "Sibéria (Rússia)",
+        "grupo": "5 - Spitz e cães de tipo primitivo",
+        "fun_fact": "Em 1925, uma equipe de Huskies liderada por Balto e Togo se tornou heroína ao percorrer mais de 1000 km para levar soro contra difteria a uma cidade isolada no Alasca."
+    },
+    {
+        "nome": "Labrador Retriever",
+        "imagem": "assets/images/labrador.jpg",
+        "descricao": "A raça mais popular em muitos países, o Labrador é amigável, extrovertido e de alta energia. Sua natureza gentil e inteligência fazem dele um excelente cão de família, de serviço e de terapia.",
+        "porte": "Grande",
+        "nivel_energia": "Alto",
+        "expectativa_vida": "10-12 anos",
+        "origem": "Canadá (Terra Nova)",
+        "grupo": "8 - Retrievers, Levantadores e Cães d'Água",
+        "fun_fact": "Labradores têm uma 'cauda de lontra', que é grossa na base e afina na ponta, agindo como um leme poderoso na água."
+    },
+    {
+        "nome": "Lhasa Apso",
+        "imagem": "assets/images/lhasa.jpeg",
+        "descricao": "Originário do Tibete, o Lhasa Apso é um cão pequeno e robusto com uma longa pelagem. Foi criado como cão de sentinela interior em mosteiros e palácios, sendo alerta e confiante.",
+        "porte": "Pequeno",
+        "nivel_energia": "Baixo a Médio",
+        "expectativa_vida": "12-15 anos",
+        "origem": "Tibete",
+        "grupo": "9 - Cães de Companhia e Toys",
+        "fun_fact": "No Tibete, acreditava-se que as almas dos monges reencarnavam como Lhasas Apsos antes de reencarnarem como humanos."
+    },
+    {
+        "nome": "Lulu da Pomerânia",
+        "imagem": "assets/images/lulu-da-pomerania.jpg",
+        "descricao": "Também conhecido como Spitz Alemão Anão, é um cão pequeno e vibrante com uma pelagem dupla exuberante e uma personalidade ousada. Apesar do tamanho, são curiosos e excelentes cães de alerta.",
+        "porte": "Toy/Anão",
+        "nivel_energia": "Médio",
+        "expectativa_vida": "12-16 anos",
+        "origem": "Alemanha / Polônia (região da Pomerânia)",
+        "grupo": "5 - Spitz e cães de tipo primitivo",
+        "fun_fact": "Dois Lulus da Pomerânia sobreviveram ao naufrágio do Titanic, sendo resgatados nos botes salva-vidas junto com seus donos."
+    },
+    {
+        "nome": "Ovelheiro Gaúcho",
+        "imagem": "assets/images/ovelheiro-gaucho.jpg",
+        "descricao": "Uma raça de pastoreio brasileira, originária do Rio Grande do Sul. É um cão rústico, ágil e inteligente, extremamente dedicado ao trabalho com o rebanho e leal ao seu dono.",
+        "porte": "Médio",
+        "nivel_energia": "Alto",
+        "expectativa_vida": "12-14 anos",
+        "origem": "Brasil",
+        "grupo": "Não reconhecido pela FCI, mas pela CBKC",
+        "fun_fact": "Acredita-se que a raça tenha se desenvolvido a partir de cães de pastoreio trazidos por imigrantes europeus, como o Border Collie e o Pastor Alemão."
+    },
+    {
         "nome": "Pastor Alemão",
         "imagem": "assets/images/pastor-alemao.jpg",
         "descricao": "Um cão de trabalho nobre e altamente inteligente, o Pastor Alemão é conhecido por sua coragem, lealdade e versatilidade. É frequentemente usado como cão policial, de serviço e de busca e resgate.",
@@ -53,5 +295,82 @@
         "origem": "Alemanha",
         "grupo": "1 - Cães Pastores e Boiadeiros",
         "fun_fact": "Rin Tin Tin, um dos primeiros cães estrelas de Hollywood, era um Pastor Alemão resgatado de um campo de batalha da Primeira Guerra Mundial."
+    },
+        {
+        "nome": "Pinscher",
+        "imagem": "assets/images/pinscher.jpg",
+        "descricao": "O Pinscher Miniatura é um cão pequeno, enérgico e autoconfiante, conhecido por sua 'marcha' elegante. Apesar do tamanho, possui a coragem de um cão muito maior, sendo um excelente cão de alarme.",
+        "porte": "Pequeno",
+        "nivel_energia": "Alto",
+        "expectativa_vida": "12-16 anos",
+        "origem": "Alemanha",
+        "grupo": "2 - Pinscher e Schnauzer, Molossos e Cães Boiadeiros Suíços",
+        "fun_fact": "Apesar da semelhança, o Pinscher não é um 'mini Doberman'. Na verdade, o Pinscher é uma raça muito mais antiga."
+    },
+    {
+        "nome": "Poodle",
+        "imagem": "assets/images/poodle.jpg",
+        "descricao": "Extremamente inteligente e orgulhoso, o Poodle vem em três tamanhos (Standard, Miniatura e Toy). Sua pelagem encaracolada e hipoalergênica é uma de suas marcas registradas.",
+        "porte": "Variado (Grande, Médio, Pequeno)",
+        "nivel_energia": "Alto",
+        "expectativa_vida": "10-18 anos",
+        "origem": "Alemanha / França",
+        "grupo": "9 - Cães de Companhia e Toys",
+        "fun_fact": "Originalmente, o Poodle era um cão de caça aquático, e seus cortes de pelo extravagantes tinham a função prática de proteger articulações e órgãos vitais do frio da água."
+    },
+    {
+        "nome": "Pug",
+        "imagem": "assets/images/pug.jpg",
+        "descricao": "Com seu rosto enrugado e personalidade charmosa, o Pug é um cão de companhia por excelência. São cães sociáveis, brincalhões e um pouco teimosos, que vivem para agradar seus donos.",
+        "porte": "Pequeno",
+        "nivel_energia": "Baixo",
+        "expectativa_vida": "13-15 anos",
+        "origem": "China",
+        "grupo": "9 - Cães de Companhia e Toys",
+        "fun_fact": "O lema da raça é 'Multum in Parvo', que significa 'muito em pouco', descrevendo sua grande personalidade em um corpo pequeno."
+    },
+    {
+        "nome": "Rottweiler",
+        "imagem": "assets/images/rottweiler.jpg",
+        "descricao": "Um cão de trabalho robusto e poderoso, o Rottweiler é calmo, confiante e corajoso. É um protetor nato de sua família e lar, mas também pode ser um companheiro gentil e amoroso.",
+        "porte": "Grande",
+        "nivel_energia": "Médio a Alto",
+        "expectativa_vida": "9-10 anos",
+        "origem": "Alemanha",
+        "grupo": "2 - Pinscher e Schnauzer, Molossos e Cães Boiadeiros Suíços",
+        "fun_fact": "Descendentes de cães de pastoreio romanos, eram usados por açougueiros na cidade de Rottweil para puxar carroças de carne e proteger o dinheiro."
+    },
+    {
+        "nome": "Shiba Inu",
+        "imagem": "assets/images/shiba-inu.jpg",
+        "descricao": "A menor e mais antiga das raças nativas do Japão, o Shiba Inu é um cão alerta, ágil e independente. Possui uma personalidade forte, muitas vezes descrita como 'parecida com a de um gato'.",
+        "porte": "Pequeno",
+        "nivel_energia": "Médio",
+        "expectativa_vida": "13-16 anos",
+        "origem": "Japão",
+        "grupo": "5 - Spitz e cães de tipo primitivo",
+        "fun_fact": "O Shiba Inu é famoso pelo 'grito do Shiba', um som agudo e alto que eles emitem quando estão muito felizes ou muito descontentes."
+    },
+    {
+        "nome": "Shih Tzu",
+        "imagem": "assets/images/shih-tzu.jpg",
+        "descricao": "Conhecido como 'cão leão', o Shih Tzu é uma raça de colo afetuosa e extrovertida. Foram criados para serem companheiros da realeza chinesa e prosperam com a atenção humana.",
+        "porte": "Pequeno",
+        "nivel_energia": "Baixo",
+        "expectativa_vida": "10-18 anos",
+        "origem": "Tibete / China",
+        "grupo": "9 - Cães de Companhia e Toys",
+        "fun_fact": "Seu nome significa 'leão' em mandarim, e eles eram mantidos em palácios imperiais para se assemelharem aos leões guardiões da arte chinesa."
+    },
+    {
+        "nome": "Yorkshire Terrier",
+        "imagem": "assets/images/yorkshire-terrier.jpg",
+        "descricao": "Um terrier pequeno e corajoso com uma pelagem longa e sedosa, o Yorkshire Terrier tem uma grande personalidade. São cães de companhia leais e afetuosos, mas também alertas e curiosos.",
+        "porte": "Toy/Anão",
+        "nivel_energia": "Alto",
+        "expectativa_vida": "11-15 anos",
+        "origem": "Inglaterra",
+        "grupo": "3 - Terriers",
+        "fun_fact": "Apesar de sua aparência delicada, os Yorkies foram originalmente criados na Inglaterra para caçar ratos em minas de carvão e fábricas têxteis."
     }
 ]
