@@ -8,9 +8,7 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
-    
-
-    <script src="https://kit.fontawesome.com/6e6731fbd7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 <body>
     <header>
@@ -19,10 +17,19 @@
             DogDex
         </h1>
         
-        <div>
-            <input type="text" placeholder="Digite uma raça de cachorro">
-            <button id="botao-busca" class="hvr-shrink" onclick="iniciarBusca()">Buscar</button>
+        <div class="search-container">
+    <input type="text" onkeyup="iniciarBusca()" placeholder="Buscar por nome...">
+    <div class="filter-wrapper">
+        <button id="filtro-btn" class="hvr-shrink">
+            <i class="fa-solid fa-filter"></i> Filtros
+        </button>
+        <div id="filter-panel" class="filter-panel">
+            <!-- Grupos de filtros serão injetados aqui -->
         </div>
+    </div>
+    </button>
+</div>
+
     </header>
 
     <main>

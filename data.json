@@ -18,7 +18,7 @@
         "nivel_energia": "Médio",
         "expectativa_vida": "10-13 anos",
         "origem": "Estados Unidos",
-        "grupo": "Não reconhecido pela FCI",
+        "grupo": "11 - Não reconhecido pela FCI",
         "fun_fact": "A raça foi criada para ser o 'cão de família definitivo', combinando a lealdade do Pit Bull com a sociabilidade de outras raças de bulldog."
     },
     {
@@ -29,7 +29,7 @@
         "nivel_energia": "Alto",
         "expectativa_vida": "12-16 anos",
         "origem": "Estados Unidos",
-        "grupo": "Não reconhecido pela FCI",
+        "grupo": "11 - Não reconhecido pela FCI",
         "fun_fact": "Durante a Primeira e Segunda Guerra Mundial, o Pit Bull foi usado como mascote nacional nos EUA, simbolizando coragem e bravura."
     },
         {
@@ -257,7 +257,7 @@
         "imagem": "assets/images/lhasa.jpeg",
         "descricao": "Originário do Tibete, o Lhasa Apso é um cão pequeno e robusto com uma longa pelagem. Foi criado como cão de sentinela interior em mosteiros e palácios, sendo alerta e confiante.",
         "porte": "Pequeno",
-        "nivel_energia": "Baixo a Médio",
+        "nivel_energia": "Baixo",
         "expectativa_vida": "12-15 anos",
         "origem": "Tibete",
         "grupo": "9 - Cães de Companhia e Toys",
@@ -282,7 +282,7 @@
         "nivel_energia": "Alto",
         "expectativa_vida": "12-14 anos",
         "origem": "Brasil",
-        "grupo": "Não reconhecido pela FCI, mas pela CBKC",
+        "grupo": "11 - Não reconhecido pela FCI",
         "fun_fact": "Acredita-se que a raça tenha se desenvolvido a partir de cães de pastoreio trazidos por imigrantes europeus, como o Border Collie e o Pastor Alemão."
     },
     {
@@ -334,7 +334,7 @@
         "imagem": "assets/images/rottweiler.jpg",
         "descricao": "Um cão de trabalho robusto e poderoso, o Rottweiler é calmo, confiante e corajoso. É um protetor nato de sua família e lar, mas também pode ser um companheiro gentil e amoroso.",
         "porte": "Grande",
-        "nivel_energia": "Médio a Alto",
+        "nivel_energia": "Alto",
         "expectativa_vida": "9-10 anos",
         "origem": "Alemanha",
         "grupo": "2 - Pinscher e Schnauzer, Molossos e Cães Boiadeiros Suíços",
