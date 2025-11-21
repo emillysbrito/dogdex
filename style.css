@@ -1,3 +1,4 @@
+/* 1. ESTILOS GLOBAIS */
 @font-face {
     font-family: 'RoundsNeueBlack';
     src: url('assets/fonts/TT\ Rounds\ Neue\ Trial\ Black.ttf');
@@ -27,6 +28,9 @@ body {
     color: var(--secondary-color);
     font-family: var(--body-font);
 }
+
+
+/* 2 - HEADER E BUSCA */
 
 header {
     padding: 1rem;
@@ -84,7 +88,9 @@ div input {
     width: 20rem;
 }
 
-/* estilos filtro */
+
+/* 3 - BOTÃO E PAINEL DE FILTROS */
+
 .filter-wrapper {
     position: relative;
     display: inline-block;
@@ -124,8 +130,6 @@ div input {
     width: 90vw; 
 }
 
-
-
 .filter-panel.show {
     display: block;
 }
@@ -162,10 +166,10 @@ div input {
     color: var(--secondary-color);
 }
 
+/* checkbox customizado */
 .filter-option input[type="checkbox"] {
     margin-right: 0.5rem;
     cursor: pointer;
-    /* Estilização customizada do checkbox */
     appearance: none;
     -webkit-appearance: none;
     width: 1.25em;
@@ -182,7 +186,7 @@ div input {
 }
 
 .filter-option input[type="checkbox"]:checked::after {
-    content: '\f1b0'; /* código do ícone de pata (paw) do FontAwesome */
+    content: '\f1b0'; /* código do ícone fa-paw */
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     color: var(--bg-color);
@@ -193,6 +197,7 @@ div input {
     font-size: 0.8em;
 }
 
+/* ações do painel de filtro */
 .filter-actions {
     margin-top: 1rem;
     text-align: center;
@@ -219,23 +224,8 @@ div input {
     border-color: var(--primary-color);
 }
 
-.no-results {
-    text-align: center;
-    padding: 4rem 2rem;
-    color: var(--secondary-color);
-}
 
-.no-results i {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: var(--tertiary-color);
-}
-
-.no-results p {
-    font-size: 1.25rem;
-    line-height: 1.6;
-    margin: 0;
-}
+/* 4 - MAIN E CARDS */
 
 main {
     overflow-x: hidden;
@@ -245,6 +235,8 @@ main {
     margin-top: 1rem;
     padding-bottom: 8rem;
 }
+
+/* card */
 article {
     display: flex;
     background: none;
@@ -298,7 +290,7 @@ article p strong {
     font-weight: bold;
 }
 
-
+/* barra de estatísticas (nível de energia) */
 .stat-item {
     display: flex;
     justify-content: space-between;
@@ -354,6 +346,28 @@ article p strong {
     white-space: nowrap;
 }
 
+/* tela de 'sem resultados' */
+.no-results {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--secondary-color);
+}
+
+.no-results i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--tertiary-color);
+}
+
+.no-results p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+/* 5 - BOTÔES DE PAGINAÇÃO */
+
 .pagination-container {
     display: flex;
     justify-content: center;
@@ -386,55 +400,8 @@ article p strong {
     border: none;
 }
 
-.footer {
-    position: relative;
-    left: 0;
-    width: 100%;
-    color: var(--tertiary-color);
-    background-color: var(--bg-color);
-    padding: 15px 20px;
-    border-top: 1px solid var(--primary-color);
-    font-size: 0.9rem;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-}
 
-.footer-links {
-    display: flex;
-    list-style: none;
-    justify-content: center;
-    flex-direction: row;
-    padding: 0;
-    gap: 25px;
-}
-
-.footer-links a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-.footer p{
-    color: var(--secondary-color);
-}
-
-.hvr-shrink {
-    display: inline-block;
-    vertical-align: middle;
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -webkit-transition-property: transform;
-    transition-property: transform;
-}
-.hvr-shrink:active {
-    -webkit-transform: scale(0.9);
-    transform: scale(0.9);
-}
+/* 6 - MODAL */
 
 .modal {
     display: flex;
@@ -481,7 +448,64 @@ article p strong {
     margin-bottom: 10px;
 }
 
-/* media queries para responsividade */
+
+/* 7 - Efeitos de Hover (hvr-shrink do hover.css) */
+
+.hvr-shrink {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+.hvr-shrink:active {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+}
+
+
+/* 8 -  RODAPÉ */
+
+.footer {
+    position: relative;
+    left: 0;
+    width: 100%;
+    color: var(--tertiary-color);
+    background-color: var(--bg-color);
+    padding: 15px 20px;
+    border-top: 1px solid var(--primary-color);
+    font-size: 0.9rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-links {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    flex-direction: row;
+    padding: 0;
+    gap: 25px;
+}
+
+.footer-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer p{
+    color: var(--secondary-color);
+}
+
+
+/* 9 - MEDIA QUERIES */
 
 @media (max-width: 850px) {
     article {

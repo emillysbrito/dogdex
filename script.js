@@ -1,12 +1,18 @@
+// 1. VARIÁVEIS E MAPEAMENTOS
 let cardContainer = document.querySelector(".card-container");
 let paginationContainer = document.querySelector(".pagination-container");
 let inputBusca = document.querySelector("input");
 let filtroBtn = document.getElementById("filtro-btn");
 let filterPanel = document.getElementById("filter-panel");
-let dados = [];
-let dadosAtuais = [];
 
-// script para transformar o número de energia nas barrinhas
+let dados = []; //armazena todos os dados carregados do data.json
+let dadosAtuais = []; //armazena os dados filtrados/buscados para renderização
+
+//configuração de paginação
+let paginaAtual = 1;
+const cardsPorPagina = 6;
+
+//mapeamento do nível de energia para número (para as barrinhas)
 const totalSegmentosEnergia = 5;
 
 const mapaEnergia = {
@@ -17,6 +23,8 @@ const mapaEnergia = {
     "Muito Alto": 5
 };
 
+// 2. DOM - BARRA DE ENERGIA
+//cria o HTML para os segmentos (barras) do indicador de nível de energia.
 function criarHtmlSegmentos(nivelEnergia) {
     const segmentosAtivos = mapaEnergia[nivelEnergia] || 0;
     let htmlSegmentos = '';
@@ -27,6 +35,7 @@ function criarHtmlSegmentos(nivelEnergia) {
     return htmlSegmentos;
 }
 
+//cria o bloco completo de HTML para exibição do nível de energia no card/modal.
 function criarHtmlNivelEnergia(dado) {
     const segmentos = criarHtmlSegmentos(dado.nivel_energia);
     return `
@@ -42,25 +51,21 @@ function criarHtmlNivelEnergia(dado) {
     `;
 }
 
-// define o número da página atual e quantos cards tem por página
-let paginaAtual = 1;
-const cardsPorPagina = 6;
-
-//função que carrega todos os dados, incluindo os cards e o painel de filtros
+// 3. FUNÇÕES DE CARREGAMENTO E INICIALIZAÇÃO
+//carrega os dados de 'data.json', popula o painel de filtros e renderiza os cards iniciais.
 async function carregarDados() {
     try {
         const resposta = await fetch("data.json");
         dados = await resposta.json();
         popularFiltros();
         renderizarCards(dados);
-
         configurarPainelFiltro();
     } catch (error) {
         console.error("Erro ao carregar os dados:", error);
     }
 }
 
-//adiciona o painel de filtros
+//adiciona a função de abrir/fechar o painel de filtros.
 function configurarPainelFiltro() {
     filtroBtn.addEventListener("click", (e) => {
         e.stopPropagation();
@@ -74,9 +79,9 @@ function configurarPainelFiltro() {
     });
 }
 
-//adiciona os filtros ao painel
+//cria e adiciona os grupos de filtros (porte, energia, grupo FCI) ao painel.
 function popularFiltros() {
-     filterPanel.innerHTML = ''; // limpa o painel
+    filterPanel.innerHTML = ''; // limpa o painel
 
     const contentDiv = document.createElement('div');
     contentDiv.className = 'filter-panel-content';
@@ -107,13 +112,14 @@ function popularFiltros() {
     // 1. porte
     const portes = [...new Set(dados.map(d => d.porte))].sort();
     criarGrupoFiltro("Porte", "porte", portes);
-    // 2. nível de energia
+    // 2. nível de Energia
     const niveisEnergia = Object.keys(mapaEnergia).filter(nivel => nivel !== "Médio-Baixo" && nivel !== "Médio-Alto");
     criarGrupoFiltro("Nível de Energia", "energia", niveisEnergia);
     // 3. grupo FCI
     const grupos = [...new Set(dados.map(d => d.grupo.split(' ')[0]))].sort((a, b) => a - b);
     criarGrupoFiltro("Grupo FCI", "grupo", grupos.map(g => `Grupo ${g}`));
-    // botão de limpar
+    
+    // botão de limpar filtros
     const actionsDiv = document.createElement("div");
     actionsDiv.className = "filter-actions";
     const limparBtn = document.createElement("button");
@@ -127,6 +133,8 @@ function popularFiltros() {
     filterPanel.appendChild(actionsDiv);
 }
 
+// 4. BUSCA, FILTRAGEM E RENDERIZAÇÃO
+//inicia o processo de busca e filtragem com base no termo de busca e nos filtros ativos.
 function iniciarBusca() {
     const termoBusca = inputBusca.value.toLowerCase();
     const filtrosAtivos = {
@@ -141,10 +149,10 @@ function iniciarBusca() {
         filtrosAtivos[cb.name].push(cb.value);
     });
 
-    // atualiza o texto do botão de filtro com a contagem
+    // atualiza o texto do botão de filtro com a contagem de filtros ativos
     const numFiltrosAtivos = checkedCheckboxes.length;
     if (numFiltrosAtivos > 0) {
-        filtroBtn.innerHTML = `<i class="fa-solid fa-filter"></i> Filtros  ${numFiltrosAtivos}`;
+        filtroBtn.innerHTML = `<i class="fa-solid fa-filter"></i> Filtros  ${numFiltrosAtivos}`;
     } else {
         filtroBtn.innerHTML = `<i class="fa-solid fa-filter"></i> Filtros`;
     }
@@ -155,9 +163,9 @@ function iniciarBusca() {
         const correspondePorte = filtrosAtivos.porte.length === 0 || filtrosAtivos.porte.includes(dado.porte);
         const correspondeEnergia = filtrosAtivos.energia.length === 0 || filtrosAtivos.energia.includes(dado.nivel_energia);
         const correspondeGrupo = filtrosAtivos.grupo.length === 0 || filtrosAtivos.grupo.some(selectedGroupLabel => {
-            // extrai o número do grupo do label (ex: "Grupo 1" -> "1")
+            // extrai o número do grupo do label (ex: "grupo 1" -> "1")
             const selectedGroupNumber = selectedGroupLabel.replace("Grupo ", "");
-            // verifica se o dado.grupo começa com o número do grupo seguido de um espaço (para o grupo 11 não aparecer no grupo 1)
+            // verifica se o dado.grupo começa com o número do grupo seguido de um espaço (assim o grupo 11 não aparece em pesquisas do grupo 1)
             return dado.grupo.startsWith(selectedGroupNumber + ' ');
         });
 
@@ -168,14 +176,14 @@ function iniciarBusca() {
     renderizarCards(dadosFiltrados);
 }
 
-
+//renderiza os cards para a página atual com base nos dados fornecidos.
 function renderizarCards(dadosParaRenderizar) {
     dadosAtuais = dadosParaRenderizar;
     cardContainer.innerHTML = "";
 
     if (dadosAtuais.length === 0) {
         cardContainer.innerHTML = `<div class="no-results"><i class="fa-solid fa-magnifying-glass"></i><p>Nenhum cãozinho encontrado.<br>Tente ajustar sua busca ou filtros!</p></div>`;
-        configurarPaginacao(); // Limpa a paginação
+        configurarPaginacao(); // limpa a paginação
         return;
     }
 
@@ -205,9 +213,13 @@ function renderizarCards(dadosParaRenderizar) {
     configurarPaginacao();
 }
 
+// 5. PAGINAÇÃO E MODAL
+// configura os botões de paginação
 function configurarPaginacao() {
     paginationContainer.innerHTML = "";
     const totalPaginas = Math.ceil(dadosAtuais.length / cardsPorPagina);
+    
+    // botão anterior
     const botaoAnterior = document.createElement("button");
     botaoAnterior.innerHTML = '<i class="fa-solid fa-angle-left"></i>';
     botaoAnterior.classList.add("pagination-arrow");
@@ -223,6 +235,7 @@ function configurarPaginacao() {
     });
     paginationContainer.appendChild(botaoAnterior);
 
+    // botões numerados
     for (let i = 1; i <= totalPaginas; i++) {
         const botao = document.createElement("button");
         botao.innerText = i;
@@ -238,6 +251,7 @@ function configurarPaginacao() {
         paginationContainer.appendChild(botao);
     }
 
+    // botão próximo
     const botaoProximo = document.createElement("button");
     botaoProximo.innerHTML = '<i class="fa-solid fa-angle-right"></i>';
     botaoProximo.classList.add("pagination-arrow");
@@ -255,11 +269,11 @@ function configurarPaginacao() {
 }
 
 function abrirModal(dado) {
-    // Cria o modal
+    // cria o modal
     const modal = document.createElement('div');
     modal.classList.add('modal');
 
-    // Conteúdo do modal
+    // conteúdo do modal
     modal.innerHTML = `
         <div class="modal-content">
             <span class="close-button">&times;</span>
@@ -275,16 +289,16 @@ function abrirModal(dado) {
         </div>
     `;
 
-    // Adiciona o modal ao body
+    // adiciona o modal ao body
     document.body.appendChild(modal);
 
-    // Adiciona funcionalidade de fechar o modal
+    // adiciona funcionalidade de fechar o modal
     const closeButton = modal.querySelector('.close-button');
     closeButton.addEventListener('click', () => {
         document.body.removeChild(modal);
     });
 
-    // Fecha o modal ao clicar fora do conteúdo
+    // fecha o modal ao clicar fora do conteúdo
     modal.addEventListener('click', (event) => {
         if (event.target === modal) {
             document.body.removeChild(modal);
@@ -292,4 +306,6 @@ function abrirModal(dado) {
     });
 }
 
+// 6. EVENTO DE INICIALIZAÇÃO
+// define 'carregarDados' como a função a ser executada quando a janela carregar.
 window.onload = carregarDados;
