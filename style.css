@@ -241,9 +241,8 @@ main {
     max-width: 80rem;
     margin: 0 auto;
     margin-top: 1rem;
-    height: calc(100vh - 10rem - 4rem);
+    padding-bottom: 8rem;
 }
-
 article {
     display: flex;
     background: none;
@@ -395,8 +394,8 @@ article p strong {
 }
 
 .footer {
-    position: absolute;
-    bottom: 0;
+    position: relative; /* Alterado de absolute para relative */
+    /* bottom: 0; */ /* Removido */
     left: 0;
     width: 100%;
     color: var(--tertiary-color);
