@@ -84,7 +84,7 @@ div input {
     width: 20rem;
 }
 
-/* --- Estilos do Novo Filtro --- */
+/* estilos filtro */
 .filter-wrapper {
     position: relative;
     display: inline-block;
@@ -110,19 +110,21 @@ div input {
 }
 
 .filter-panel {
-    display: none; /* Começa escondido */
+    display: none;
     position: absolute;
     top: calc(100% + 5px);
-    right: 0; /* Alinha o painel à direita do botão */
+    right: 0; 
     background-color: var(--bg-color);
     border: 1px solid var(--tertiary-color);
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     z-index: 100;
     padding: 1rem;
-    max-width: 700px; /* Largura máxima */
-    width: 90vw; /* Largura flexível */
+    max-width: 700px;
+    width: 90vw; 
 }
+
+
 
 .filter-panel.show {
     display: block;
@@ -131,7 +133,7 @@ div input {
 .filter-panel-content {
     display: flex;
     justify-content: space-between;
-    gap: 1.5rem; /* Espaço entre as colunas de filtros */
+    gap: 1.5rem;
 }
 
 .filter-group {
@@ -180,8 +182,8 @@ div input {
 }
 
 .filter-option input[type="checkbox"]:checked::after {
-    content: '\f1b0'; /* Código do ícone de pata (paw) do FontAwesome */
-    font-family: "Font Awesome 6 Free"; /* Garante que a fonte correta seja usada */
+    content: '\f1b0'; /* código do ícone de pata (paw) do FontAwesome */
+    font-family: "Font Awesome 6 Free";
     font-weight: 900;
     color: var(--bg-color);
     position: absolute;
@@ -301,64 +303,55 @@ article p strong {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* Substitui a margem do <p> antigo para alinhar o layout */
     margin: 0.5rem 0; 
     line-height: 1.6;
 }
 
-/* Lado esquerdo: Rótulo + Barras */
 .stat-info {
-    flex-grow: 1; /* Ocupa o espaço disponível */
+    flex-grow: 1;
     margin-right: 1.5rem;
 }
 
-/* O rótulo "Nível de Energia" */
 .stat-label {
     display: block;
     font-size: 1.15rem;
     font-weight: bold;
-    color: var(--primary-color); /* Usa a cor principal para destaque */
-    margin-bottom: 0.3rem; /* Espaço entre o rótulo e a barra */
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
 }
 
-/* O contêiner das barrinhas */
 .stat-bar {
     display: flex;
-    gap: 4px; /* Espaço entre os segmentos */
+    gap: 4px;
     width: 100%;
 }
 
-/* Cada segmento da barra */
 .segment {
-    height: 10px; /* Altura da barra */
-    flex-grow: 1; /* Faz os segmentos ocuparem o espaço igualmente */
+    height: 10px;
+    flex-grow: 1;
     border-radius: 5px;
-    transition: background-color 0.3s ease; /* Adiciona transição para a cor */
+    transition: background-color 0.3s ease;
 }
 
-/* Cor da barra ATIVA */
 .segment.active {
     background-color: var(--primary-color);
 }
 
-/* Cor da barra INATIVA (sutil) */
 .segment.inactive {
     background-color: var(--tertiary-color);
     opacity: 0.5;
 }
 
-/* Lado direito: O valor em texto (ex: "Médio") */
 .stat-value {
     text-align: right;
     flex-shrink: 0;
 }
 
-/* Estilo do texto do valor (para alinhar com as outras informações) */
 .stat-value .text-value {
     font-size: 1rem;
     font-weight: 500;
     color: var(--secondary-color);
-    white-space: nowrap; /* Evita que o texto quebre */
+    white-space: nowrap;
 }
 
 .pagination-container {
@@ -394,8 +387,7 @@ article p strong {
 }
 
 .footer {
-    position: relative; /* Alterado de absolute para relative */
-    /* bottom: 0; */ /* Removido */
+    position: relative;
     left: 0;
     width: 100%;
     color: var(--tertiary-color);
@@ -428,7 +420,6 @@ article p strong {
     color: var(--secondary-color);
 }
 
-/* animação de hover dos botôes */
 .hvr-shrink {
     display: inline-block;
     vertical-align: middle;
@@ -445,7 +436,6 @@ article p strong {
     transform: scale(0.9);
 }
 
-/* estilos para o modal */
 .modal {
     display: flex;
     position: fixed;
@@ -530,6 +520,12 @@ article p strong {
         padding: 0 1rem;
     }
 
+    .filter-panel {
+        max-height: 80vh;
+        overflow-y: auto; 
+        -webkit-overflow-scrolling: touch;
+    }
+
     .filter-panel-content {
         flex-direction: column;
         gap: 0.5rem;
@@ -564,6 +560,13 @@ article p strong {
         width: 90vw;
         left: 50%;
         transform: translateX(-50%);
+    }
+
+    .modal-content {
+        width: 95%;
+        max-height: 85vh;
+        overflow-y: auto;
+        padding: 15px;
     }
 
 }
