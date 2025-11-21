@@ -55,7 +55,7 @@
         "fun_fact": "O Beagle mais famoso do mundo é o Snoopy, o icônico personagem dos quadrinhos Peanuts!"
     },
         {
-        "nome": "Boiadeiro Australiano (Blue Heeler)",
+        "nome": "Boiadeiro Australiano (Blue/Red Heeler)",
         "imagem": "assets/images/boiadeiro-australiano.jpg",
         "descricao": "Um cão de pastoreio extremamente inteligente, alerta e resistente. O Blue Heeler é leal à sua família, mas pode ser desconfiado com estranhos. Precisa de muito exercício físico e mental.",
         "porte": "Médio",
@@ -63,7 +63,7 @@
         "expectativa_vida": "12-16 anos",
         "origem": "Austrália",
         "grupo": "1 - Cães Pastores e Boiadeiros",
-        "fun_fact": "A raça foi desenvolvida cruzando Dingos (cães selvagens australianos) com Collies, para criar um cão de trabalho que suportasse o clima árido da Austrália."
+        "fun_fact": "O Boiadeiro Australiano é a raça que inspirou Bluey e Bingo, da série Bluey!"
     },
     {
         "nome": "Boiadeiro de Berna (Bernese)",

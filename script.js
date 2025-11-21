@@ -6,14 +6,14 @@ let filterPanel = document.getElementById("filter-panel");
 let dados = [];
 let dadosAtuais = [];
 
+// script para transformar o número de energia nas barrinhas
 const totalSegmentosEnergia = 5;
 
 const mapaEnergia = {
-    "Baixo": 1,
-    "Médio-Baixo": 2,
+    "Muito Baixo": 1,
+    "Baixo": 2,
     "Médio": 3,
-    "Médio-Alto": 4,
-    "Alto": 5,
+    "Alto": 4,
     "Muito Alto": 5
 };
 
@@ -42,9 +42,11 @@ function criarHtmlNivelEnergia(dado) {
     `;
 }
 
+// define o número da página atual e quantos cards tem por página
 let paginaAtual = 1;
-const cardsPorPagina = 8;
+const cardsPorPagina = 6;
 
+//função que carrega todos os dados, incluindo os cards e o painel de filtros
 async function carregarDados() {
     try {
         const resposta = await fetch("data.json");
@@ -58,6 +60,7 @@ async function carregarDados() {
     }
 }
 
+//adiciona o painel de filtros
 function configurarPainelFiltro() {
     filtroBtn.addEventListener("click", (e) => {
         e.stopPropagation();
@@ -71,8 +74,9 @@ function configurarPainelFiltro() {
     });
 }
 
+//adiciona os filtros ao painel
 function popularFiltros() {
-     filterPanel.innerHTML = ''; // Limpa o painel
+     filterPanel.innerHTML = ''; // limpa o painel
 
     const contentDiv = document.createElement('div');
     contentDiv.className = 'filter-panel-content';
@@ -100,16 +104,16 @@ function popularFiltros() {
 
     filterPanel.appendChild(contentDiv);
 
-    // 1. Porte
+    // 1. porte
     const portes = [...new Set(dados.map(d => d.porte))].sort();
     criarGrupoFiltro("Porte", "porte", portes);
-    // 2. Nível de Energia (sem "Médio-Baixo" e "Médio-Alto")
+    // 2. nível de energia
     const niveisEnergia = Object.keys(mapaEnergia).filter(nivel => nivel !== "Médio-Baixo" && nivel !== "Médio-Alto");
     criarGrupoFiltro("Nível de Energia", "energia", niveisEnergia);
-    // 3. Grupo FCI
+    // 3. grupo FCI
     const grupos = [...new Set(dados.map(d => d.grupo.split(' ')[0]))].sort((a, b) => a - b);
     criarGrupoFiltro("Grupo FCI", "grupo", grupos.map(g => `Grupo ${g}`));
-    // Botão de Limpar
+    // botão de limpar
     const actionsDiv = document.createElement("div");
     actionsDiv.className = "filter-actions";
     const limparBtn = document.createElement("button");
@@ -131,9 +135,19 @@ function iniciarBusca() {
         grupo: []
     };
 
-    filterPanel.querySelectorAll('input[type="checkbox"]:checked').forEach(cb => {
+    const checkedCheckboxes = filterPanel.querySelectorAll('input[type="checkbox"]:checked');
+
+    checkedCheckboxes.forEach(cb => {
         filtrosAtivos[cb.name].push(cb.value);
     });
+
+    // atualiza o texto do botão de filtro com a contagem
+    const numFiltrosAtivos = checkedCheckboxes.length;
+    if (numFiltrosAtivos > 0) {
+        filtroBtn.innerHTML = `<i class="fa-solid fa-filter"></i> Filtros  ${numFiltrosAtivos}`;
+    } else {
+        filtroBtn.innerHTML = `<i class="fa-solid fa-filter"></i> Filtros`;
+    }
 
     let dadosFiltrados = dados.filter(dado => {
         const correspondeBusca = dado.nome.toLowerCase().includes(termoBusca);
@@ -141,9 +155,9 @@ function iniciarBusca() {
         const correspondePorte = filtrosAtivos.porte.length === 0 || filtrosAtivos.porte.includes(dado.porte);
         const correspondeEnergia = filtrosAtivos.energia.length === 0 || filtrosAtivos.energia.includes(dado.nivel_energia);
         const correspondeGrupo = filtrosAtivos.grupo.length === 0 || filtrosAtivos.grupo.some(selectedGroupLabel => {
-            // Extrai o número do grupo do label (ex: "Grupo 1" -> "1")
+            // extrai o número do grupo do label (ex: "Grupo 1" -> "1")
             const selectedGroupNumber = selectedGroupLabel.replace("Grupo ", "");
-            // Verifica se o dado.grupo começa com o número do grupo seguido de um espaço
+            // verifica se o dado.grupo começa com o número do grupo seguido de um espaço (para o grupo 11 não aparecer no grupo 1)
             return dado.grupo.startsWith(selectedGroupNumber + ' ');
         });
 
@@ -153,6 +167,7 @@ function iniciarBusca() {
     paginaAtual = 1;
     renderizarCards(dadosFiltrados);
 }
+
 
 function renderizarCards(dadosParaRenderizar) {
     dadosAtuais = dadosParaRenderizar;
@@ -180,13 +195,10 @@ function renderizarCards(dadosParaRenderizar) {
                 <p><strong><i class="fa-solid fa-paw"></i> Porte:</strong> ${dado.porte}</p>
                 
                 ${criarHtmlNivelEnergia(dado)}
-                
-                <p><strong><i class="fa-solid fa-heart-pulse"></i> Expectativa de Vida:</strong> ${dado.expectativa_vida}</p>
-                <p><strong><i class="fa-solid fa-location-dot"></i> Origem:</strong> ${dado.origem}</p>
-                <p><strong><i class="fa-solid fa-bone"></i> Grupo:</strong> ${dado.grupo}</p>
-                <p><strong><i class="fa-solid fa-lightbulb"></i> Fun Fact:</strong> ${dado.fun_fact}</p>
             </div>
         `;
+
+        article.addEventListener("click", () => abrirModal(dado));
 
         cardContainer.appendChild(article);
     }
@@ -240,6 +252,44 @@ function configurarPaginacao() {
         }
     });
     paginationContainer.appendChild(botaoProximo);
+}
+
+function abrirModal(dado) {
+    // Cria o modal
+    const modal = document.createElement('div');
+    modal.classList.add('modal');
+
+    // Conteúdo do modal
+    modal.innerHTML = `
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>${dado.nome}</h2>
+            <img src="${dado.imagem}" alt="Imagem de um cachorro da raça ${dado.nome}">
+            <p>${dado.descricao}</p>
+            <p><strong><i class="fa-solid fa-paw"></i> Porte:</strong> ${dado.porte}</p>
+            ${criarHtmlNivelEnergia(dado)}
+            <p><strong><i class="fa-solid fa-heart-pulse"></i> Expectativa de Vida:</strong> ${dado.expectativa_vida}</p>
+            <p><strong><i class="fa-solid fa-location-dot"></i> Origem:</strong> ${dado.origem}</p>
+            <p><strong><i class="fa-solid fa-bone"></i> Grupo:</strong> ${dado.grupo}</p>
+            <p><strong><i class="fa-solid fa-lightbulb"></i> Fun Fact:</strong> ${dado.fun_fact}</p>
+        </div>
+    `;
+
+    // Adiciona o modal ao body
+    document.body.appendChild(modal);
+
+    // Adiciona funcionalidade de fechar o modal
+    const closeButton = modal.querySelector('.close-button');
+    closeButton.addEventListener('click', () => {
+        document.body.removeChild(modal);
+    });
+
+    // Fecha o modal ao clicar fora do conteúdo
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            document.body.removeChild(modal);
+        }
+    });
 }
 
 window.onload = carregarDados;
